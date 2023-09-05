@@ -70,27 +70,38 @@
 <!-- Sign up starts  -->
 
 <div class="container signup-container">
-    <form class="row" action="district.html">
+    <form class="row" action="#" >
         <div class="form">
-            <h1></h1>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="firstname" required>
-                <label for="floatingInput">First Name</label>
+        </br></br>
+            <div class="form-group mb-3" >
+                <input type="text" class="form-control mb-0" id="fname" placeholder="firstname" >
+                <span id="err1" class="errFnt"></span>
             </div>
-            <div class="form-floating">
-                <input type="text" class="form-control" id="floatingInput" placeholder="lastname" required>
-                <label for="floatingInput">Last Name</label>
+            <div class="form-group">
+                <input type="text" class="form-control" id="lname" placeholder="lastname" >
+                <span id="err2" class="errFnt"></span>
             </div>
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
-                <label for="floatingInput">Email address</label>
+            <div class="form-group">
+              <input type="text" class="form-control" id="phone" placeholder="Phone Number" onchange="validPhone();">
+              <span id="err3" class="errFnt"></span>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" id="email" placeholder="email id"  onchange="validEmail();">
+                <span id="err4" class="errFnt"></span>
               </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
-                <label for="floatingPassword">Password</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="pwd" placeholder="Password" onchange="validPass();">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><i class="bi bi-info-circle" id="pwdinfo" data-toggle="tooltip" title="Password should required minimum 8 characters, at least one uppercase, and one lower case, must contain at least one number" ></i></span>
+                </div>
               </div>
-              <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+              <span id="err5" class="errFnt"></span>
+              
+              <div class="col-12 form-group">
+                <span id="err" class="errFnt"></span>
+                <span id="errs" class="errFnt"></span>
+                <br>
+                <button type="button" class="btn btn-primary" onclick="return requiredAll();">Sign Up</button>
               </div>
 
         </div>
@@ -101,9 +112,23 @@
 <!-- Sign up ends -->
 
 
+<!-- Modal for success starts-->
 
+<div class="modal" tabindex="-1" id="successModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-body">
+        <p>Registered Successfully</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-<!-- login ends -->
+<!-- Modal for success end-->
 
 <!-- Footer Starts -->
 <footer class="new_footer_area bg_color">
@@ -163,14 +188,25 @@
   </div>
 </footer>
 
-
-
-
-
 <!-- Footer Ends -->
+
+<script src="js/validation.js"></script>
+
+<!-- $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+}) -->
+
+
+    <!-- <script>
+
+      $(document).on('ready', function() {
+        $('#pwdinfo').tooltip('show');
+            
+          });
+    </script> -->
 
     <!-- Bottstrap js cdn -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
+    
 </body>
 </html>
